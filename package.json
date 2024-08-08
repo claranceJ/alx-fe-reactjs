@@ -6,8 +6,8 @@
     "dev": "vite"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jacktone Clarance",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "vite": "^5.4.0"
