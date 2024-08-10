@@ -14,6 +14,10 @@ function App() {
   return (
     
     <>
+      <div>
+        <h1>UserProfile</h1>
+        <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      </div>
       <UserProfile />      
       <Header />
       <MainContent />
