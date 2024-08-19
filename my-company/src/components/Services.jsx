@@ -3,8 +3,8 @@ import React from "react";
 function Services() {
   return (
     <div style={{ 
-      padding: '20px', 
-      textAlign: 'center', 
+      padding: '400px',
+      alignContent: "center", 
       backgroundColor: '#f5f5f5', 
       minHeight: 'calc(100vh - 60px)',
       maxWidth: '1200px', 

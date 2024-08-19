@@ -18,7 +18,7 @@ function Contact() {
 
   return (
     <div style={{ 
-      padding: '20px', 
+      padding: '300px', 
       textAlign: 'center', 
       backgroundColor: '#f5f5f5', 
       minHeight: 'calc(100vh - 60px)',
