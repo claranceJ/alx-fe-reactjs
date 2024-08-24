@@ -5,11 +5,15 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
 import RecipeDetails from "./components/RecipeDetails";
 import SearchBar from "./components/SearchBar";
+import FavoritesList from "./components/FavoriteList";
+import RecommendationsList from "./components/RecommendationsList";
 
 const App = () => {
   return (
     <Router>
       <SearchBar />
+      <FavoritesList />
+      <RecommendationsList />
       <Routes>
         <Route path="/" element={<RecipeList />} />
         <Route path="add-recipe" element={<AddRecipeForm/>} />
