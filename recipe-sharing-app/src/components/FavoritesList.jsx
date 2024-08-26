@@ -1,12 +1,13 @@
 // src/components/FavoritesList.jsx
 import React from "react";
-import useRecipeStore from "../components/recipeStore";
+import useRecipeStore from "./recipeStore";
 
 const FavoritesList = () => {
   const favorites = useRecipeStore((state) =>
     state.favorites.map((id) => state.recipes.find((recipe) => recipe.id === id))
   );
 
+  // Logic to display favorite list
   return (
     <div>
       <h2>My Favorites</h2>

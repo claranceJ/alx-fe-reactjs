@@ -5,6 +5,7 @@ import useRecipeStore from "../components/recipeStore";
 const RecommendationsList = () => {
   const recommendations = useRecipeStore((state) => state.recommendations);
 
+  //logic for recommendationlist
   return (
     <div>
       <h2>Recommended for You</h2>
