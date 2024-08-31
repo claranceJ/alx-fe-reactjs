@@ -1,52 +1,56 @@
-// src/components/formikForm.js
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+// src/components/RegistrationForm.jsx
+import React, { useState } from "react";
 
-const FormikForm = () => {
-  const handleSubmit = (values) => {
-    console.log("Form Submitted", values);
+const RegistrationForm = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!username || !email || !password) {
+      setError("All fields are required.");
+      return;
+    }
+
+    setError("");
+    // Handle form submission logic (e.g., sending data to a mock API)
+    console.log("Form Submitted", { username, email, password });
   };
 
   return (
-    <Formik
-      initialValues={{ username: "", email: "", password: "" }}
-      validate={(values) => {
-        const errors = {};
-        if (!values.username) {
-          errors.username = "Username is required";
-        }
-        if (!values.email) {
-          errors.email = "Email is required";
-        }
-        if (!values.password) {
-          errors.password = "Password is required";
-        }
-        return errors;
-      }}
-      onSubmit={handleSubmit}
-    >
-      {() => (
-        <Form>
-          <div>
-            <label>Username:</label>
-            <Field name="username" type="text" />
-            <ErrorMessage name="username" component="div" style={{ color: "red" }} />
-          </div>
-          <div>
-            <label>Email:</label>
-            <Field name="email" type="email" />
-            <ErrorMessage name="email" component="div" style={{ color: "red" }} />
-          </div>
-          <div>
-            <label>Password:</label>
-            <Field name="password" type="password" />
-            <ErrorMessage name="password" component="div" style={{ color: "red" }} />
-          </div>
-          <button type="submit">Register</button>
-        </Form>
-      )}
-    </Formik>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Username:</label>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <button type="submit">Register</button>
+    </form>
   );
 };
 
-export default FormikForm;
+export default RegistrationForm;
