@@ -5,19 +5,33 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Initialize an empty errors object
+    let errors = {};
+
     // Basic validation
-    if (!username || !email || !password) {
-      setError("All fields are required.");
+    if (!username) {
+      errors.username = "Username is required";
+    }
+    if (!email) {
+      errors.email = "Email is required";
+    }
+    if (!password) {
+      errors.password = "Password is required";
+    }
+
+    // If there are errors, update the state
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
       return;
     }
 
-    setError("");
-    // Handle form submission logic (e.g., sending data to a mock API)
+    // If no errors, clear the errors and proceed
+    setErrors({});
     console.log("Form Submitted", { username, email, password });
   };
 
@@ -30,6 +44,7 @@ const RegistrationForm = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        {errors.username && <p style={{ color: "red" }}>{errors.username}</p>}
       </div>
       <div>
         <label>Email:</label>
@@ -38,6 +53,7 @@ const RegistrationForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
       </div>
       <div>
         <label>Password:</label>
@@ -46,8 +62,8 @@ const RegistrationForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
       </div>
-      {error && <p style={{ color: "red" }}>{error}</p>}
       <button type="submit">Register</button>
     </form>
   );
