@@ -3,8 +3,9 @@ import React from "react";
 function Home() {
   return (
     <div style={{ 
-      padding: '300px',
-      paddingTop: '-20', 
+      paddingTop: '80px', 
+      paddingLeft: '70px',
+      // margin: '20%',
       textAlign: 'center', 
       backgroundColor: '#f5f5f5', 
       minHeight: 'calc(100vh - 60px)',

@@ -1,6 +1,6 @@
 // src/components/RecipeList.jsx
 import React, { useEffect } from 'react';
-import useRecipeStore from '../components/recipeStore';
+import useRecipeStore from './recipeStore';
 import { Link } from 'react-router-dom';
 
 const RecipeList = () => {
