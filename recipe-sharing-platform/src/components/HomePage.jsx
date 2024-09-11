@@ -19,7 +19,7 @@ const HomePage = () => {
       <h1 className="text-3xl font-bold mb-4 text-center">Recipe List</h1>
 
       {/* Grid layout for recipe cards with responsive columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Map over the recipes and display each recipe in a card */}
         {recipes.map((recipe) => (
           <div
