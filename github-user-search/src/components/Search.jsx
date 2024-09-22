@@ -21,7 +21,7 @@ const SearchUser = () => {
     if (data) {
       setUserData(data);
     } else {
-      setError("Looks like we can't find the user.");
+      setError("Looks like we cant find the user");
     }
     setLoading(false);  // Set loading state to false after the request
   };
