@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div>
-      <h1>Github user search</h1>
       <Search />
     </div>
     
