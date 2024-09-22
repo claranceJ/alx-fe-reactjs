@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Function to fetch advanced user data from GitHub
-export const fetchAdvancedUserData = async (username, location, minRepos) => {
+export const fetchUserData = async (username, location, minRepos) => {
   try {
     let query = username ? `${username} in:login` : "";  // Base query by username
 

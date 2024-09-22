@@ -18,7 +18,7 @@ const Search = () => {
     setUserData([]);
 
     // Fetch user data from GitHub using advanced search
-    const data = await fetchAdvancedUserData(username, location, minRepos);
+    const data = await fetchUserData(username, location, minRepos);
 
     if (data && data.items.length > 0) {
       setUserData(data.items);  // Update with fetched user data
