@@ -30,7 +30,7 @@ const Search = () => {
 
   return (
     <div className="p-4 max-w-lg mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Advanced GitHub User Search</h2>
+      <h2 className="text-2xl font-bold mb-4">GitHub User Search</h2>
       <form onSubmit={handleSearch} className="space-y-4">
         <input
           type="text"
